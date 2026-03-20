@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Luiz Guedez — Links</title>
+  <meta name="description" content="Todos os links oficiais de @oluizguedez. TikTok, Instagram e contato." />
+  <meta name="author" content="Luiz Fernando Guedes Silva" />
+  <meta property="og:title" content="Luiz Guedez — Links" />
+  <meta property="og:description" content="Todos os links de @oluizguedez em um só lugar." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>" />
+
+  <!-- Fonts: Plus Jakarta Sans (moderna, não genérica) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!--
+    ╔══════════════════════════════════════════╗
+    ║  CONFIGURAÇÃO EMAILJS                    ║
+    ║  1. Crie conta em https://emailjs.com    ║
+    ║  2. Crie um Email Service (Gmail/iCloud) ║
+    ║  3. Crie um Email Template com vars:     ║
+    ║     {{from_name}}, {{from_email}},       ║
+    ║     {{message}}                          ║
+    ║  4. Copie SERVICE_ID, TEMPLATE_ID e      ║
+    ║     PUBLIC_KEY para o script.js          ║
+    ╚══════════════════════════════════════════╝
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-dot"></div>
+    <div class="loader-dot"></div>
+    <div class="loader-dot"></div>
+  </div>
+
+  <!-- Background decorativo -->
+  <div class="bg" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <main class="container">
+
+    <!-- Perfil -->
+    <section class="profile">
+
+      <!-- Foto (COMO TROCAR: substitua o src pela URL ou caminho da sua foto) -->
+      <div class="avatar-wrap">
+        <img
+          src="guedess.png"
+          onerror="this.src='https://ui-avatars.com/api/?name=Luiz+Guedez&background=0ea5e9&color=fff&size=200&bold=true&font-size=0.4&rounded=true'"
+          alt="Foto de @oluizguedez"
+          class="avatar"
+          width="110" height="110"
+        />
+      </div>
+
+      <h1 class="name">Luiz Guedez</h1>
+      <p class="handle">@oluizguedez</p>
+
+      <p class="bio">
+        Criador de conteúdo · Aracaju, SE 📍<br>
+        Top 20 iBest Sergipe 2025 🏆
+      </p>
+
+    </section>
+
+    <!-- Links
+         ╔══════════════════════════════════════╗
+         ║  COMO EDITAR LINKS:                  ║
+         ║  Cada <a> é um botão. Edite:         ║
+         ║  • href="..." → URL destino          ║
+         ║  • Texto dentro do <span class="lbl">║
+         ║  Para adicionar: copie um bloco <a>  ║
+         ╚══════════════════════════════════════╝
+    -->
+    <nav class="links" aria-label="Links de @oluizguedez">
+
+      <a href="https://www.tiktok.com/@oluizguedez?_r=1&_t=ZS-94ncF8AXzqn"
+         target="_blank" rel="noopener noreferrer"
+         class="link-btn" data-color="#010101">
+        <span class="icon" style="background:#010101;">
+          <i class="fa-brands fa-tiktok"></i>
+        </span>
+        <span class="lbl">TikTok</span>
+        <i class="fa-solid fa-arrow-up-right-from-square arr"></i>
+      </a>
+
+      <a href="https://www.instagram.com/oluizguedez"
+         target="_blank" rel="noopener noreferrer"
+         class="link-btn" data-color="#e1306c">
+        <span class="icon" style="background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);">
+          <i class="fa-brands fa-instagram"></i>
+        </span>
+        <span class="lbl">Instagram</span>
+        <i class="fa-solid fa-arrow-up-right-from-square arr"></i>
+      </a>
+
+      <!-- Botão e-mail abre formulário abaixo -->
+      <button type="button" id="toggle-contact"
+              class="link-btn" data-color="#0ea5e9"
+              aria-expanded="false" aria-controls="contact-form-wrap">
+        <span class="icon" style="background:#0ea5e9;">
+          <i class="fa-solid fa-envelope"></i>
+        </span>
+        <span class="lbl">Enviar mensagem</span>
+        <i class="fa-solid fa-chevron-down arr" id="chevron"></i>
+      </button>
+
+    </nav>
+
+    <!-- Formulário de contato (oculto por padrão) -->
+    <section id="contact-form-wrap" class="contact-wrap" hidden>
+      <h2 class="form-title"><i class="fa-solid fa-paper-plane"></i> Fale comigo</h2>
+
+      <form id="contact-form" novalidate>
+
+        <div class="field">
+          <label for="f-name">Nome</label>
+          <input type="text" id="f-name" name="from_name"
+                 placeholder="Seu nome" autocomplete="name" required />
+        </div>
+
+        <div class="field">
+          <label for="f-email">E-mail</label>
+          <input type="email" id="f-email" name="from_email"
+                 placeholder="seu@email.com" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <label for="f-msg">Mensagem</label>
+          <textarea id="f-msg" name="message"
+                    placeholder="Escreva sua mensagem..." rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submit-btn">
+          <span id="btn-text">Enviar</span>
+          <span id="btn-spin" class="spin" hidden></span>
+        </button>
+
+        <p id="form-msg" class="form-msg" aria-live="polite"></p>
+
+      </form>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      <p>© 2026 Luiz Guedez · Aracaju, SE</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
