@@ -113,52 +113,9 @@
         <i class="fa-solid fa-arrow-up-right-from-square arr"></i>
       </a>
 
-      <!-- Botão e-mail abre formulário abaixo -->
-      <button type="button" id="toggle-contact"
-              class="link-btn" data-color="#0ea5e9"
-              aria-expanded="false" aria-controls="contact-form-wrap">
-        <span class="icon" style="background:#0ea5e9;">
-          <i class="fa-solid fa-envelope"></i>
-        </span>
-        <span class="lbl">Enviar mensagem</span>
-        <i class="fa-solid fa-chevron-down arr" id="chevron"></i>
-      </button>
-
     </nav>
 
-    <!-- Formulário de contato (oculto por padrão) -->
-    <section id="contact-form-wrap" class="contact-wrap" hidden>
-      <h2 class="form-title"><i class="fa-solid fa-paper-plane"></i> Fale comigo</h2>
-
-      <form id="contact-form" novalidate>
-
-        <div class="field">
-          <label for="f-name">Nome</label>
-          <input type="text" id="f-name" name="from_name"
-                 placeholder="Seu nome" autocomplete="name" required />
-        </div>
-
-        <div class="field">
-          <label for="f-email">E-mail</label>
-          <input type="email" id="f-email" name="from_email"
-                 placeholder="seu@email.com" autocomplete="email" required />
-        </div>
-
-        <div class="field">
-          <label for="f-msg">Mensagem</label>
-          <textarea id="f-msg" name="message"
-                    placeholder="Escreva sua mensagem..." rows="4" required></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn" id="submit-btn">
-          <span id="btn-text">Enviar</span>
-          <span id="btn-spin" class="spin" hidden></span>
-        </button>
-
-        <p id="form-msg" class="form-msg" aria-live="polite"></p>
-
-      </form>
-    </section>
+    
 
     <!-- Rodapé -->
     <footer class="footer">
